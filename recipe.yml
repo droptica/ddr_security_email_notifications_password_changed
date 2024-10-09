@@ -1,0 +1,11 @@
+name: 'DDR Security Email Notifications - Password changed'
+type: 'Droptica’s Drupal Recipes'
+description: "Automatic notifications and logging of user password changes"
+
+install:
+  - password_notification
+  - user
+
+config:
+  import:
+    password_notification: '*'
