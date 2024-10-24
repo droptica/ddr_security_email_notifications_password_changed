@@ -7,5 +7,22 @@ install:
   - user
 
 config:
-  import:
-    password_notification: '*'
+  actions:
+    password_notification.settings:
+      simpleConfigUpdate:
+        password_notification_mail: true
+        password_notification_log: true
+        mail_subject: 'Password Changed'
+        mail_body: |-
+          Dear [user-name],
+
+            Your Password has been changed by [current-user-name].
+
+          [site-url]
+        mail_bcc: ''
+        mail_cc: ''
+        delete_records_limit: '5000'
+        mail_subject_en: 'Password Changed'
+        mail_body_en: "Dear [user-name], \r\n\r\nYour Password has been changed by [current-user-name]. \r\n\r\n[site-url]"
+        mail_bcc_en: ''
+        mail_cc_en: ''
